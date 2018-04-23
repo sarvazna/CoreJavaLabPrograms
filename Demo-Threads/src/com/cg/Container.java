@@ -6,8 +6,10 @@ public class Container {
 	private boolean isMessageAvailable;
 	
 	synchronized
-	public void put(String message) throws InterruptedException{
-		while(isMessageAvailable== true){
+	public void put(String message) throws InterruptedException
+	{
+		while(isMessageAvailable== true)
+		{
 			((Container) this).wait();
 		}
 		
@@ -21,8 +23,10 @@ public class Container {
 	}
 	
 	synchronized
-	public String get() throws InterruptedException{
-		while(isMessageAvailable == false){
+	public String get() throws InterruptedException
+	{
+		while(isMessageAvailable == false)
+		{
 			((Container) this).wait();
 		}
 		
